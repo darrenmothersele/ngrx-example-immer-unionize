@@ -1,20 +1,13 @@
-import { Action } from '@ngrx/store';
-import { ActionTypes } from './counter.actions';
+import { Actions } from './counter.actions';
+import produce from 'immer';
 
 export const initialState = 0;
 
-export function counterReducer(state = initialState, action: Action) {
-  switch (action.type) {
-    case ActionTypes.Increment:
-      return state + 1;
+const producer = (draft, action) => Actions.match(action, {
+  Increment: () => draft + 1,
+  Decrement: () => draft - 1,
+  Reset: () => initialState,
+  default: () => {}
+});
 
-    case ActionTypes.Decrement:
-      return state - 1;
-
-    case ActionTypes.Reset:
-      return 0;
-
-    default:
-      return state;
-  }
-}
+export const counterReducer = produce(producer, initialState);
