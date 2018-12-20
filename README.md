@@ -2,7 +2,7 @@
 
 This is the example from the NgRx documentation, but adapted to use Immer and Unionize.
 
-[Open in StackBlitz](https://stackblitz.com/github/darrenmothersele/ngrx-example-immer-unionize)
+[Open in StackBlitz](https://stackblitz.com/github/darrenmothersele/ngrx-example-immer-unionize/tree/master)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.3.
 
